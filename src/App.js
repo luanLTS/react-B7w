@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.css';
 import Profile from './componentes/Profile/Profile'
 import Likes from './componentes/Like/Likes'
 import Header from './componentes/Header/Header'
-  
-
-//! Concertar o exemplo com useEffect antes de avanças nos próximos videos
-
+import Contagem from './componentes/EXuseEffect/EXuseEffect'
+import SearchBox from './componentes/SearchBox/SearchBox'
 
 function App() {
   let user = {
@@ -26,6 +24,12 @@ function App() {
 
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
+  const [ texto, setTexto ] = useState('')
+
+  //? const HandleText = (newText) => {
+  //?    setTexto(newText)
+  //? }
+
   return (
     <>
       <Header/>
@@ -42,6 +46,15 @@ function App() {
       {email.length > 0 && 
         <p>{email.length} caractere{email.length == 1 ? '' : 's'}</p>
       }
+
+      <Contagem/>
+
+      <SearchBox
+        textoPadrao="Teste de placeholder"
+        onTextChange={(newText)=>setTexto(newText)}
+      />
+      {/* <SearchBox /> */}
+      <h1>{texto}</h1>
     </>
   );
 }
