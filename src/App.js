@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css';
 import Profile from './componentes/Profile/Profile'
 import Likes from './componentes/Like/Likes'
 import Header from './componentes/Header/Header'
-import CalculaGorjata from './componentes/Calculadora/Calculadora'
   
+
+//! Concertar o exemplo com useEffect antes de avanças nos próximos videos
+
 
 function App() {
   let user = {
@@ -20,6 +22,8 @@ function App() {
     setEmail(e.target.value)
   }
 */
+
+
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   return (
@@ -29,7 +33,6 @@ function App() {
       {/* </Header> */}
       <Profile user={user} />
       <Likes />
-      {/* <CalculaGorjata/> */}
       <label>Nome:</label><input type='text' value={nome} onChange={ (e)=>setNome(e.target.value) } />
       {nome.length > 0 && 
         <p>{nome.length} caractere{nome.length == 1 ? '' : 's'}</p>
