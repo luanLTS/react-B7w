@@ -3,6 +3,7 @@ import './App.css';
 import Profile from './componentes/Profile/Profile'
 import Likes from './componentes/Like/Likes'
 import Header from './componentes/Header/Header'
+import CalculaGorjata from './componentes/Calculadora/Calculadora'
   
 
 function App() {
@@ -28,8 +29,16 @@ function App() {
       {/* </Header> */}
       <Profile user={user} />
       <Likes />
-      <label>Nome:</label><input type='text' value={nome} onChange={ (e)=>setNome(e.target.value) } /><p>{nome.length} caracteres</p>
-      <label>Email:</label><input type='text' value={email} onChange={ (e)=>setEmail(e.target.value) } /><p>{email.length} caracteres</p>
+      {/* <CalculaGorjata/> */}
+      <label>Nome:</label><input type='text' value={nome} onChange={ (e)=>setNome(e.target.value) } />
+      {nome.length > 0 && 
+        <p>{nome.length} caractere{nome.length == 1 ? '' : 's'}</p>
+        }
+      <br />
+      <label>Email:</label><input type='text' value={email} onChange={ (e)=>setEmail(e.target.value) } />
+      {email.length > 0 && 
+        <p>{email.length} caractere{email.length == 1 ? '' : 's'}</p>
+      }
     </>
   );
 }

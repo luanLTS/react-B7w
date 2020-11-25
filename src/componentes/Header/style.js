@@ -7,6 +7,6 @@ export const Wrapper = styled.div`
   margin: 0;
 `
 export const Titulo = styled.h1`
-  color : #ffad01;
+  color : ${(props) => props.color || '#ffa1bc'};
   font-size: 30px;
 `
