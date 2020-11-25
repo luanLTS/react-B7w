@@ -5,6 +5,7 @@ import Likes from './componentes/Like/Likes'
 import Header from './componentes/Header/Header'
 import Contagem from './componentes/EXuseEffect/EXuseEffect'
 import SearchBox from './componentes/SearchBox/SearchBox'
+import CEP from './componentes/CEP/CEP'
 
 function App() {
   let user = {
@@ -51,10 +52,12 @@ function App() {
 
       <SearchBox
         textoPadrao="Teste de placeholder"
-        onTextChange={(newText)=>setTexto(newText)}
+        onValueChange={(newText)=>setTexto(newText)}
       />
       {/* <SearchBox /> */}
       <h1>{texto}</h1>
+
+      <CEP />
     </>
   );
 }

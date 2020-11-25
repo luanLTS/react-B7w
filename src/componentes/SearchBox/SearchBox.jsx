@@ -6,7 +6,7 @@ export default function SearchBox (props) {
     const [ valor, setValor ] = useState('')
     
     useEffect(()=>{
-        props.onTextChange(valor)
+        props.onValueChange(valor)
     }, [valor])
 
     return (
