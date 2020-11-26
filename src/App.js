@@ -27,6 +27,7 @@ function App() {
   const [email, setEmail] = useState('')
   const [ texto, setTexto ] = useState('')
 
+
   //? const HandleText = (newText) => {
   //?    setTexto(newText)
   //? }
