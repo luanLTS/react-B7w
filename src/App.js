@@ -7,6 +7,8 @@ import Contagem from './componentes/EXuseEffect/EXuseEffect'
 import SearchBox from './componentes/SearchBox/SearchBox'
 import CEP from './componentes/CEP/CEP'
 
+import Listar from './componentes/Listagem//Listagem'
+
 function App() {
   let user = {
     url: "https://www.google.com.br/google.jpg",
@@ -59,6 +61,8 @@ function App() {
       <h1>{texto}</h1>
 
       <CEP />
+
+      <Listar />
     </>
   );
 }
