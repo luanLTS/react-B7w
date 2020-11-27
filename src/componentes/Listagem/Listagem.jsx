@@ -15,13 +15,18 @@ export default function Listar () {
     const onListAdd = () =>{
         setList([
             ...list,
-            texto
+            { titulo : texto, feito : false }
         ])
     }
     const CleanList = () => {
         setList( [] )
     }
 
+    const HandingFeito = (index) => {
+        let modList = [...list]
+        modList[index].feito = !modList[index].feito
+        setList(modList)
+    }
     
     return (
         <>
@@ -30,7 +35,14 @@ export default function Listar () {
             <button onClick={ CleanList }>Limpar lista</button>
             { list.map((item, index) => {
                 return(
-                    <Lista key={index}>{item}</Lista>
+                    <Lista key={index} onClick={ () => HandingFeito(index)}>
+                        { item.feito &&
+                            <del>{item.titulo}</del>
+                        }
+                        { !item.feito &&
+                            item.titulo
+                        }
+                    </Lista>
                 )
             }) }
         </>
